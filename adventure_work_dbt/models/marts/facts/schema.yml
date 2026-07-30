@@ -1,0 +1,76 @@
+  version: 2
+
+  models:
+
+    - name: fct_vendas
+      description: |
+        Tabela fato contendo os itens das vendas do Adventure Works.
+
+      columns:
+
+        - name: sales_order_detail_id
+          description: Identificador único do item do pedido.
+          tests:
+            - unique
+            - not_null
+
+        - name: sales_order_id
+          description: Identificador do pedido.
+          tests:
+            - not_null
+
+        - name: customer_sk
+          tests:
+            - relationships:
+                to: ref('dim_cliente')
+                field: customer_sk
+
+        - name: product_sk
+          tests:
+            - relationships:
+                to: ref('dim_produto')
+                field: product_sk
+
+        - name: date_sk
+          tests:
+            - relationships:
+                to: ref('dim_data')
+                field: date_sk
+
+        - name: credit_card_sk
+          tests:
+            - relationships:
+                to: ref('dim_cartao')
+                field: credit_card_sk
+
+        - name: location_sk
+          tests:
+            - relationships:
+                to: ref('dim_localizacao')
+                field: location_sk
+
+        - name: order_quantity
+          tests:
+            - not_null
+
+        - name: unit_price
+          tests:
+            - not_null
+
+        - name: line_total
+          tests:
+            - not_null
+
+        - name: total_due
+          tests:
+            - not_null
+
+    columns:
+
+  - name: sales_order_detail_id
+
+    tests:
+
+      - unique
+
+      - not_null
