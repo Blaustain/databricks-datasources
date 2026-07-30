@@ -26,10 +26,9 @@ models:
 
     intermediate:
       +materialized: view
-
     marts:
       +materialized: table
 
- vars:
 
-  gross_sales_2011_expected: 12646112.16     
+vars: 
+ gross_sales_2011_expected: 12646112.16     
