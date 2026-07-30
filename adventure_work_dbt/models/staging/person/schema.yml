@@ -1,0 +1,69 @@
+version: 2
+
+models:
+
+  - name: stg_person
+    description: Cadastro de pessoas do Adventure Works.
+
+    columns:
+
+      - name: business_entity_id
+        description: Identificador único da pessoa.
+        tests:
+          - unique
+          - not_null
+
+      - name: first_name
+        description: Primeiro nome.
+
+      - name: last_name
+        description: Sobrenome.
+
+      - name: person_type
+        description: Tipo de pessoa.
+
+  - name: stg_address
+    description: Endereços cadastrados.
+
+    columns:
+
+      - name: address_id
+        tests:
+          - unique
+          - not_null
+
+      - name: state_province_id
+        tests:
+          - not_null
+
+      - name: city
+        tests:
+          - not_null
+
+  - name: stg_stateprovince
+    description: Estados e províncias.
+
+    columns:
+
+      - name: state_province_id
+        tests:
+          - unique
+          - not_null
+
+      - name: country_region_code
+        tests:
+          - not_null
+
+  - name: stg_countryregion
+    description: Países e regiões.
+
+    columns:
+
+      - name: country_region_code
+        tests:
+          - unique
+          - not_null
+
+      - name: country_name
+        tests:
+          - not_null

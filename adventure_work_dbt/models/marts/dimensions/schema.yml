@@ -1,0 +1,213 @@
+version: 2
+
+models:
+
+  - name: dim_cliente
+    description: |
+      Dimensão de clientes utilizada na análise de vendas.
+      Cada registro representa um cliente único do Adventure Works.
+
+    columns:
+
+      - name: customer_sk
+        description: Chave substituta da dimensão.
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: Chave de negócio do cliente.
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_name
+        description: Nome completo do cliente.
+        tests:
+          - not_null
+
+      - name: customer_type
+        description: Pessoa Física ou Loja.
+
+      - name: territory_id
+        description: Território comercial.
+
+      - name: store_id
+        description: Loja vinculada ao cliente quando existir.
+
+  - name: dim_produto
+    description: |
+      Dimensão de produtos utilizada para análises comerciais.
+      Cada registro representa um produto único do Adventure Works.
+
+    columns:
+
+      - name: product_sk
+        description: Chave substituta da dimensão.
+        tests:
+          - unique
+          - not_null
+
+      - name: product_id
+        description: Chave de negócio do produto.
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        description: Nome do produto.
+        tests:
+          - not_null
+
+      - name: product_category_name
+        description: Categoria do produto.
+
+      - name: product_subcategory_name
+        description: Subcategoria do produto.
+
+      - name: list_price
+        description: Preço de lista.
+
+      - name: standard_cost
+        description: Custo padrão.
+
+      - name: dim_data
+        description: Dimensão calendário utilizada nas análises temporais.
+         
+        columns:
+     
+     
+      - name: date_sk
+        description: Chave substituta da data no formato YYYYMMDD.
+        tests:
+          - unique
+          - not_null
+
+      - name: full_date
+        description: Data completa.
+        tests:
+          - unique
+          - not_null
+
+      - name: year
+        description: Ano.
+
+      - name: semester
+        description: Semestre.
+
+      - name: quarter
+        description: Trimestre.
+
+      - name: month
+        description: Número do mês.
+
+      - name: month_name
+        description: Nome do mês.
+
+      - name: week_of_year
+        description: Semana do ano.
+
+      - name: day_of_month
+        description: Dia do mês.
+
+      - name: day_of_week
+        description: Número do dia da semana.
+
+      - name: day_name
+        description: Nome do dia da semana.
+
+      - name: is_weekend
+        description: Indicador de fim de semana.
+
+  - name: dim_localizacao
+    description: |
+      Dimensão de localização utilizada para análises geográficas.
+      Cada registro representa um endereço do Adventure Works enriquecido
+      com estado e país.
+
+    columns:
+
+      - name: location_sk
+        description: Chave substituta da dimensão.
+        tests:
+          - unique
+          - not_null
+
+      - name: address_id
+        description: Chave de negócio do endereço.
+        tests:
+          - unique
+          - not_null
+
+      - name: city
+        description: Cidade.
+
+      - name: state_name
+        description: Nome do estado ou província.
+
+      - name: state_province_code
+        description: Sigla do estado.
+
+      - name: country_name
+        description: País.
+
+      - name: postal_code
+        description: CEP.
+
+  - name: dim_cartao
+    description: |
+      Dimensão de cartões de crédito utilizados nas vendas.
+
+    columns:
+
+      - name: credit_card_sk
+        description: Chave substituta da dimensão.
+        tests:
+          - unique
+          - not_null
+
+      - name: credit_card_id
+        description: Chave de negócio do cartão.
+        tests:
+          - unique
+          - not_null
+
+      - name: card_type
+        description: Bandeira ou tipo do cartão.
+        tests:
+          - not_null
+
+      - name: expiration_month
+        description: Mês de expiração.
+
+      - name: expiration_year
+        description: Ano de expiração.
+
+      - name: card_status
+        description: Situação calculada do cartão.        
+
+  - name: dim_motivo_venda
+    description: |
+      Dimensão contendo os motivos associados às vendas.
+
+    columns:
+
+      - name: sales_reason_sk
+        description: Chave substituta da dimensão.
+        tests:
+          - unique
+          - not_null
+
+      - name: sales_reason_id
+        description: Chave de negócio.
+        tests:
+          - unique
+          - not_null
+
+      - name: sales_reason
+        description: Nome do motivo da venda.
+        tests:
+          - not_null
+
+      - name: reason_type
+        description: Categoria do motivo (Promotion, Marketing, Other...).

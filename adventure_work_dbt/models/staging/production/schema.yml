@@ -1,0 +1,60 @@
+version: 2
+
+models:
+
+  - name: stg_product
+    description: Cadastro de produtos do Adventure Works.
+
+    columns:
+
+      - name: product_id
+        description: Chave do produto.
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        description: Nome do produto.
+        tests:
+          - not_null
+
+      - name: product_subcategory_id
+        description: Chave da subcategoria.
+
+      - name: list_price
+        description: Preço de tabela.
+
+      - name: standard_cost
+        description: Custo padrão.
+
+  - name: stg_productsubcategory
+    description: Subcategorias dos produtos.
+
+    columns:
+
+      - name: product_subcategory_id
+        tests:
+          - unique
+          - not_null
+
+      - name: product_category_id
+        tests:
+          - not_null
+
+      - name: product_subcategory_name
+        tests:
+          - not_null
+
+  - name: stg_productcategory
+    description: Categorias dos produtos.
+
+    columns:
+
+      - name: product_category_id
+        tests:
+          - unique
+          - not_null
+
+      - name: product_category_name
+        tests:
+          - not_null

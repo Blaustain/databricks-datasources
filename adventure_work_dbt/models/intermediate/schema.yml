@@ -1,0 +1,57 @@
+version: 2
+
+models:
+
+  - name: int_sales_orders
+
+    description: Pedidos de venda enriquecidos com cliente e cartão.
+
+    columns:
+
+      - name: sales_order_id
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        tests:
+          - not_null
+
+  - name: int_sales_items
+
+    description: Itens dos pedidos.
+
+    columns:
+
+      - name: sales_order_detail_id
+        tests:
+          - unique
+          - not_null
+
+      - name: sales_order_id
+        tests:
+          - relationships:
+              to: ref('int_sales_orders')
+              field: sales_order_id
+
+  - name: int_customer
+
+    description: Cliente consolidado.
+
+    columns:
+
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: int_product
+
+    description: Produto consolidado.
+
+    columns:
+
+      - name: product_id
+        tests:
+          - unique
+          - not_null
