@@ -29,6 +29,10 @@ models:
     marts:
       +materialized: table
 
+    +catalog: adventureworks
+    +schema: gold
+    +materialized: table      
+
 
 vars: 
  gross_sales_2011_expected: 12646112.16     
