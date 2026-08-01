@@ -1,0 +1,46 @@
+{
+    "path_count": 213,
+    "parsed_path_count": 5,
+    "static_analysis_path_count": 0,
+    "static_analysis_parsed_path_count": 0,
+    "is_partial_parse_enabled": true,
+    "is_static_analysis_enabled": true,
+    "read_files_elapsed": 0.016088637989014387,
+    "load_macros_elapsed": 0.0005918387323617935,
+    "parse_project_elapsed": 0.1586130317300558,
+    "patch_sources_elapsed": 6.956048309803009e-06,
+    "process_manifest_elapsed": 0.004069104790687561,
+    "load_all_elapsed": 0.22385895578190684,
+    "projects": [
+        {
+            "project_name": "adventure_works",
+            "elapsed": 0.15856888331472874,
+            "parsers": [
+                {
+                    "parser": "test",
+                    "elapsed": 0.15856158826500177,
+                    "parsed_path_count": 5
+                }
+            ],
+            "parsed_path_count": 5
+        },
+        {
+            "project_name": "dbt_databricks",
+            "elapsed": 0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt_spark",
+            "elapsed": 0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt",
+            "elapsed": 0,
+            "parsers": [],
+            "parsed_path_count": 0
+        }
+    ]
+}
