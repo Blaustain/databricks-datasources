@@ -1,25 +1,20 @@
-version: 2
+  version: 2
 
-sources:
+  sources:
+    - name: adventure_works
+      database: fea_academy
+      schema: adventure_works
 
-  - name: adventure_works
+      tables:
+        - name: sales_salesorderheader
+          tests:
+            - dbt_utils.equal_rowcount:
+                column_name: ref('stg_salesorderheader')
 
-    database: fea_academy
+        - name: sales_salesorderdetail
 
-    schema: adventure_works
+        - name: sales_customer
 
-    tables:
+        - name: production_product
 
-      - name: sales_salesorderheader
-
-        tests:
-          - dbt_utils.equal_rowcount:
-              compare_model: ref('stg_salesorderheader')
-
-      - name: sales_salesorderdetail
-
-      - name: sales_customer
-
-      - name: production_product
-
-      - name: person_person
+        - name: person_person
