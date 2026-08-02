@@ -2,6 +2,7 @@ with orders as (
 
     select *
     from {{ ref('stg_salesorderheader') }}
+    from {{ ref('stg_sales_orders') }} 
 
 ),
 
