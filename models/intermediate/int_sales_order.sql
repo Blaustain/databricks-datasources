@@ -1,4 +1,4 @@
-with order as (
+with orders as (
 
     select *
     from {{ ref('stg_salesorderheader') }}
@@ -6,10 +6,10 @@ with order as (
     
 
 ),
-with order as (
+with sales_orders as (
 
     select *
-    from {{ ref('stg_sales_order') }} 
+    from {{ ref('stg_sales_orders') }} 
     
 
 ),
