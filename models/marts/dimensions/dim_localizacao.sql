@@ -1,21 +1,21 @@
 with address as (
 
     select *
-    from {{ ref('stg_address.sql') }}
+    from {{ ref('stg_address') }}
 
 ),
 
 state_province as (
 
     select *
-    from {{ ref('stg_stateprovince.sql') }}
+    from {{ ref('stg_stateprovince') }}
 
 ),
 
 country_region as (
 
     select *
-    from {{ ref('stg_countryregion.sql') }}
+    from {{ ref('stg_countryregion') }}
 
 ),
 
