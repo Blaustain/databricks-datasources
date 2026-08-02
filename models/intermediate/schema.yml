@@ -31,8 +31,8 @@ models:
       - name: sales_order_id
         tests:
           - relationships:
-              to: ref('int_sales_orders')
-              field: sales_order_id
+              arguments: ref('int_sales_orders')
+              column_name: sales_order_id
 
   - name: int_customer
 
