@@ -12,27 +12,34 @@ macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
 target-path: "target"
+
 clean-targets:
-  - "target"
-  - "dbt_packages"
-  - "logs"
+  - target
+  - dbt_packages
+  - logs
 
 models:
-
   adventure_works:
 
+    +catalog: adventureworks
+
     staging:
+      +schema: staging
       +materialized: view
 
     intermediate:
+      +schema: intermediate
       +materialized: view
+
     marts:
+      +schema: gold
       +materialized: table
 
-    +catalog: adventureworks
-    +schema: gold
-    +materialized: table      
+      dimensions:
+        +materialized: table
 
+      facts:
+        +materialized: table
 
-vars: 
- gross_sales_2011_expected: 12646112.16     
+vars:
+  gross_sales_2011_expected: 12646112.16

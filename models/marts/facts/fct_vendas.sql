@@ -1,7 +1,7 @@
 with sales_orders as (
 
     select *
-    from {{ ref('int_sales_orders') }}
+    from {{ ref('int_orders') }}
 
 ),
 
