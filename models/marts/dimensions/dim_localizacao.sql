@@ -1,3 +1,10 @@
+
+
+{{ ref('stg_address') }}
+{{ ref('stg_stateprovince') }}
+{{ ref('stg_countryregion') }}
+
+
 with address as (
 
     select *
