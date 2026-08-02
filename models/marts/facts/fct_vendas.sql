@@ -1,49 +1,49 @@
 with sales_orders as (
 
     select *
-    from {{ ref('int_sales_orders') }}
+    from {{ ref('int_sales_orders.sql') }}
 
 ),
 
 sales_items as (
 
     select *
-    from {{ ref('int_sales_items') }}
+    from {{ ref('int_sales_items.sql') }}
 
 ),
 
 customers as (
 
     select *
-    from {{ ref('dim_cliente') }}
+    from {{ ref('dim_cliente.sql') }}
 
 ),
 
 products as (
 
     select *
-    from {{ ref('dim_produto') }}
+    from {{ ref('dim_produto.sql') }}
 
 ),
 
 dates as (
 
     select *
-    from {{ ref('dim_data') }}
+    from {{ ref('dim_data.sql') }}
 
 ),
 
 cards as (
 
     select *
-    from {{ ref('dim_cartao') }}
+    from {{ ref('dim_cartao.sql') }}
 
 ),
 
 locations as (
 
     select *
-    from {{ ref('dim_localizacao') }}
+    from {{ ref('dim_localizacao.sql') }}
 
 ),
 
