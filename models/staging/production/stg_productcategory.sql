@@ -1,10 +1,9 @@
 with source as (
 
     select *
-    from {{ source('adventure_works', 'production_productsubcategory') }}
+    from {{ source('adventure_works', 'production_productcategory') }}
 
 ),
-
 renamed as (
 
     select

@@ -3,7 +3,17 @@ with orders as (
     select *
     from {{ ref('stg_salesorderheader') }}
 
+    
+
 ),
+with sales_orders as (
+
+    select *
+    from {{ ref('stg_sales_orders') }} 
+    
+
+),
+
 
 customers as (
 

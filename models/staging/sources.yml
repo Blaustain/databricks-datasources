@@ -2,25 +2,65 @@ version: 2
 
 sources:
   - name: adventure_works
+    description: Tabelas OLTP do banco Adventure Works.
     database: fea_academy
     schema: adventure_works
 
     tables:
+
+      # ===========================
+      # SALES
+      # ===========================
+
       - name: sales_salesorderheader
+        description: Cabeçalho dos pedidos de venda.
+
       - name: sales_salesorderdetail
+        description: Itens dos pedidos de venda.
+
       - name: sales_customer
-
-      - name: production_product
-      - name: production_productsubcategory
-      - name: production_productcategory
-      - name: production_productmodel
-
-      - name: person_person
-      - name: person_address
-      - name: person_stateprovince
-      - name: person_countryregion
+        description: Cadastro de clientes.
 
       - name: sales_creditcard
+        description: Cartões de crédito utilizados pelos clientes.
+
       - name: sales_salesreason
+        description: Motivos das vendas.
+
       - name: sales_salesorderheadersalesreason
+        description: Relacionamento entre pedidos e motivos da venda.
+
       - name: sales_salesterritory
+        description: Territórios de venda.
+
+      # ===========================
+      # PERSON
+      # ===========================
+
+      - name: person_person
+        description: Cadastro de pessoas.
+
+      - name: person_address
+        description: Endereços.
+
+      - name: person_stateprovince
+        description: Estados e províncias.
+
+      - name: person_countryregion
+        description: Países.
+
+      # ===========================
+      # PRODUCTION
+      # ===========================
+
+      - name: production_product
+        description: Produtos.
+
+      - name: production_productsubcategory
+        description: Subcategorias de produtos.
+
+      - name: production_productcategory
+        description: Categorias de produtos.
+
+      - name: production_productmodel
+        description: Modelos de produtos.

@@ -2,7 +2,7 @@ version: 2
 
 models:
 
-  - name: fct_vendas
+  - name: fct_venda
 
     description: |
       Tabela fato contendo os itens vendidos no Adventure Works.

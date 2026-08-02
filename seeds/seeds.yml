@@ -1,0 +1,29 @@
+version: 2
+
+seeds:
+  - name: calendar
+    description: Calendário corporativo
+    columns:
+      - name: date_key
+        tests:
+          - unique
+          - not_null
+
+  - name: country_codes
+    description: Código ISO dos países
+    columns:
+      - name: country_region_code
+        tests:
+          - unique
+          - not_null
+
+  - name: sales_targets
+    description: Metas mensais de vendas
+    columns:
+      - name: year
+        tests:
+          - not_null
+
+      - name: month
+        tests:
+          - not_null

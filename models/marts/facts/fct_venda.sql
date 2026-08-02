@@ -1,4 +1,7 @@
-with sales_orders as (
+
+
+
+with  int_sales_orders as (
 
     select *
     from {{ ref('int_sales_orders') }}
