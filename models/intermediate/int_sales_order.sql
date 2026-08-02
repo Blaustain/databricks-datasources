@@ -1,16 +1,19 @@
-with orders as (
+with order as (
 
     select *
     from {{ ref('stg_salesorderheader') }}
+
+    
+
+),
+with order as (
+
+    select *
+    from {{ ref('stg_sales_order') }} 
     
 
 ),
 
-select *
-    
-    from {{ ref('stg_sales_orders') }} 
-
-),
 
 customers as (
 
