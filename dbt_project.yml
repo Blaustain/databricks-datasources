@@ -24,7 +24,7 @@ models:
     +catalog: adventureworks
 
     staging:
-      +schema: staging
+      +schema: marts
       +materialized: view
 
     intermediate:
