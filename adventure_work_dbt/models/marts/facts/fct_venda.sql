@@ -54,7 +54,7 @@ sales_reasons as (
 
     select
 
-        sr.sales_order_id,
+        sr.sales_order_id_sk,
 
         concat_ws(
             ', ',
@@ -65,13 +65,17 @@ sales_reasons as (
 
     inner join {{ ref('dim_motivo_venda') }} r
 
-        on sr.sales_reason_id = r.sales_reason_id
+        on sr.sales_reason_id_sk = r.sales_reason_id_sk
 
     group by sr.sales_order_id
 
 ),
 
 final as (
+    {{ dbt_utils.generate_surrogate_key([
+    'so.sales_order_id',
+    'si.sales_order_detail_id'
+]) }} as sales_sk
 
     select
 

@@ -4,24 +4,10 @@ config-version: 2
 
 profile: adventure_works
 
-model-paths: ["models"]
-analysis-paths: ["analyses"]
-test-paths: ["tests"]
-seed-paths: ["seeds"]
-macro-paths: ["macros"]
-snapshot-paths: ["snapshots"]
-
-target-path: "target"
-
-clean-targets:
-  - target
-  - dbt_packages
-  - logs
-
 models:
-  adventure_works:
+  adventure_works_dbt:
 
-    +catalog: adventureworks
+    +catalog: adventure_works
 
     staging:
       +schema: staging
@@ -32,7 +18,7 @@ models:
       +materialized: view
 
     marts:
-      +schema: gold
+      +schema: marts
       +materialized: table
 
       dimensions:
@@ -43,3 +29,4 @@ models:
 
 vars:
   gross_sales_2011_expected: 12646112.16
+    
