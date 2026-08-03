@@ -91,4 +91,5 @@ dbt run
 
 dbt test
 
-Samuel Souza
+Nome: Samuel Souza.
+Graduando: Engenharia da Computação (Univesp)
