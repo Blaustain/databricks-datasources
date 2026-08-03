@@ -72,6 +72,10 @@ sales_reasons as (
 ),
 
 final as (
+    {{ dbt_utils.generate_surrogate_key([
+    'so.sales_order_id',
+    'si.sales_order_detail_id'
+]) }} as sales_sk
 
     select
 
